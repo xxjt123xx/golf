@@ -1,0 +1,24 @@
+{
+  "name": "@golf/mcp",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 3001",
+    "build": "next build",
+    "start": "next start -p 3001",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@better-auth/mcp": "1.7.28",
+    "@golf/db": "*",
+    "@modelcontextprotocol/server": "^2.4.0",
+    "next": "16.4.6",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.2.0",
+    "typescript": "^5.9.3"
+  }
+}

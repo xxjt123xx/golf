@@ -1,39 +1,12 @@
 {
-  "name": "golf-mcp",
-  "version": "1.0.0",
+  "name": "golf",
+  "private": true,
+  "workspaces": ["apps/*", "packages/*"],
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "typecheck": "tsc --noEmit",
-    "db:migrate": "auth migrate --yes && node scripts/migrate-app.mjs"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/xxjt123xx/golf.git"
-  },
-  "bugs": {
-    "url": "https://github.com/xxjt123xx/golf/issues"
-  },
-  "homepage": "https://github.com/xxjt123xx/golf#readme",
-  "dependencies": {
-    "@better-auth/cimd": "^1.7.28",
-    "@better-auth/mcp": "^1.7.28",
-    "@better-auth/oauth-provider": "^1.7.28",
-    "@modelcontextprotocol/server": "^2.4.0",
-    "better-auth": "^1.7.28",
-    "next": "^16.4.6",
-    "pg": "^8.23.1",
-    "react": "^19.3.1",
-    "react-dom": "^19.3.1",
-    "zod": "^4.6.7"
-  },
-  "devDependencies": {
-    "@types/node": "^26.6.6",
-    "@types/pg": "^8.23.1",
-    "@types/react": "^19.3.0",
-    "auth": "^1.7.28",
-    "typescript": "^7.0.2"
-  },
-  "private": true
+    "dev": "npm run dev -w @golf/web & npm run dev -w @golf/mcp & wait",
+    "build": "npm run build -w @golf/web && npm run build -w @golf/mcp",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "test": "npm test --workspaces --if-present",
+    "db:migrate": "npm run db:migrate -w @golf/web && npm run migrate -w @golf/db"
+  }
 }

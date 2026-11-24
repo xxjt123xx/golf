@@ -1,0 +1,37 @@
+:root {
+  --bg: #f7f8f5; --surface: #ffffff; --text: #1d2a1f; --muted: #5b6b5e; --line: #dfe5dc;
+  --brand: #1f6f43; --brand-ink: #ffffff; --accent: #e9f3ec;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #111714; --surface: #18211b; --text: #e7efe9; --muted: #9db0a2; --line: #2a362e;
+    --brand: #4fbf7f; --brand-ink: #0d1510; --accent: #1d2b22; }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.55 system-ui, -apple-system, "Segoe UI", sans-serif; }
+a { color: var(--brand); }
+.wrap { max-width: 960px; margin: 0 auto; padding: 0 16px; }
+header.site { border-bottom: 1px solid var(--line); background: var(--surface); }
+header.site .wrap { display: flex; align-items: center; justify-content: space-between; height: 60px; }
+header.site nav { display: flex; gap: 16px; align-items: center; }
+.logo { font-weight: 700; text-decoration: none; color: var(--text); }
+.btn { display: inline-block; background: var(--brand); color: var(--brand-ink); border: 0; border-radius: 8px;
+  padding: 10px 18px; font: inherit; font-weight: 600; text-decoration: none; cursor: pointer; }
+.btn.secondary { background: transparent; color: var(--text); border: 1px solid var(--line); }
+.btn:disabled { opacity: .6; cursor: default; }
+.hero { padding: 64px 0 40px; }
+.hero h1 { font-size: clamp(32px, 6vw, 48px); line-height: 1.1; margin: 0 0 16px; }
+.hero p { font-size: 18px; color: var(--muted); max-width: 620px; }
+.grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 20px; }
+.card h3 { margin: 0 0 6px; font-size: 17px; }
+.card p { margin: 0; color: var(--muted); }
+section { padding: 32px 0; }
+.chat { background: var(--accent); border-radius: 12px; padding: 16px 20px; }
+.chat p { margin: 6px 0; }
+code, pre { background: var(--accent); border-radius: 6px; padding: 2px 6px; overflow-wrap: anywhere; }
+pre { padding: 12px; white-space: pre-wrap; }
+table { width: 100%; border-collapse: collapse; }
+th, td { text-align: left; padding: 8px 6px; border-bottom: 1px solid var(--line); }
+.narrow { max-width: 440px; margin: 48px auto; }
+.muted { color: var(--muted); }
+footer { border-top: 1px solid var(--line); padding: 24px 0; color: var(--muted); font-size: 14px; margin-top: 40px; }
